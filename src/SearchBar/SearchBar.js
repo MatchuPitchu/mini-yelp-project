@@ -6,7 +6,7 @@ const SearchBar = () => {
   return (
     <div className={styles.searchBarImage}>
         <div className={styles.searchBar}>
-      <h2> Find a Restaurant for Any Occasion </h2>
+      <h2>Find a Restaurant for Any Occasion </h2>
       
         <div className="field has-addons">
           <p className="control">
