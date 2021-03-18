@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Navbar from './Components/Navbar.js'
-import Map from './Components/Map.js'
+import Navbar from './Navbar/Navbar';
+import Map from './Map/Map';
 import SearchBar from './SearchBar/SearchBar';
 
 function App() {

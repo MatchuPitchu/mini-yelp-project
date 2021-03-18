@@ -4,7 +4,7 @@ import { Icon } from "leaflet";
 import markerCustom from '../Assets/Img/MarkerIcon.png';
 import "leaflet/dist/images/marker-shadow.png";
 
-import '../Custom Css/Leaflet.css';
+import './Leaflet.css';
 import "leaflet/dist/leaflet.css";
 
 
