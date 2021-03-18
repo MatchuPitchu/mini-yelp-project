@@ -35,3 +35,24 @@
   margin-left: 10px;
   font-size: 1.4em;
 }
+
+.toggler-custom {
+  margin: 10px 0px;
+}
+
+.btn-register {
+  border: 1px solid #7c7c7d;
+  margin: 0px 10px;
+  width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn-register:hover {
+  background-color: #5e2828;
+  color: #fff !important;
+}
+
+.icon-login:hover {
+  color: #5e2828;
+}
