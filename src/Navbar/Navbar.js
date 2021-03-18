@@ -1,5 +1,5 @@
 import React from 'react';
-import './Navbar.module.css';
+import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 // import fontawesome for React
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

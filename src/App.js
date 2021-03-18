@@ -3,8 +3,9 @@ import './App.css';
 import Navbar from './Navbar/Navbar';
 import Map from './Map/Map';
 import SearchBar from './SearchBar/SearchBar';
+import Footer from './Footer/Footer';
 
-function App() {
+const App = () => {
   return (
     <div>
       <header>
@@ -12,6 +13,7 @@ function App() {
         <SearchBar/>
        </header>
        <Map />
+       <Footer />
     </div>
   );
 }

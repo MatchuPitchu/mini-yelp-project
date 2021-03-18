@@ -1,0 +1,38 @@
+/* Footer */
+.footer {
+  background-color: #4b0404;
+  margin-top: 40px;
+  padding: 20px 0;
+  color: #fff;
+  border-top: 1px solid #191919;
+}
+
+.footer a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.hr {
+  background-color: #191919;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.socialicon {
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+}
+
+.bg-light {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.bg-light:hover {
+  background-color: #fff;
+  color: #353636;
+  opacity: 1;
+}
