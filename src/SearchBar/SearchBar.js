@@ -15,7 +15,7 @@ const SearchBar = () => {
 
           <p className="control">
             <input
-              className={`input is-medium ${styles["input-central"]}`}
+              className={`input is-medium ${styles["input-central"]} inputfield`}
               type="text"
               placeholder="Restaurant or Cousine"
             />
@@ -27,7 +27,7 @@ const SearchBar = () => {
 
           <p className="control">
             <input
-              className={`input is-medium ${styles["input-central"]}`}
+              className={`input is-medium ${styles["input-central"]} inputfield`}
               type="text"
               placeholder="Location"
             />
