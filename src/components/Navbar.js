@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <>
         <div className="container navbar-bg">
-            <nav className="navbar navbar-expand-md sticky-top navbar-light bg-light ">
+            <nav className="navbar navbar-expand-sm sticky-top navbar-light bg-light ">
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" to="./">
                         <FontAwesomeIcon className="brandlogo" icon={['fa', 'utensils']} />
