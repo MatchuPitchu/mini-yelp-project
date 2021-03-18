@@ -13,22 +13,3 @@ body {
 h2 {
   text-decoration: underline #c8ccd0;
 }
-
-/* Brand logo */
-.brandlogo {
-  margin-right: 10px;
-  color: #6b6b6b;
-}
-
-.brandlogo:hover {
-  transform: rotate(720deg);
-  transition: transform 2s;
-}
-
-.brand {
-  text-decoration: underline #6b6b6b;
-}
-
-.brand:hover {
-  text-decoration: 3px underline #6b6b6b;
-}
