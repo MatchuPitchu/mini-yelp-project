@@ -1,7 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Form from 'react-bootstrap/Form';
 import './Footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
     return (
@@ -9,7 +8,7 @@ const Footer = () => {
         <div className="footer">
 			<div className="container">
 				<div className="row">
-					<div className="col">
+					<div className="col-sm-6 col-lg-4 mt-3">
 						<h3>About us</h3>
 						<div className="row">
 						    <div className="col-1">
@@ -34,7 +33,7 @@ const Footer = () => {
 							<div className="col">thesportsblog@posteo.de</div>							
 						</div>
 					</div>
-					<div className="col">
+					<div className="col-sm-6 col-lg-3 mt-3">
 						<h3>Follow us</h3>
 						<div className="row">
 							<div className="col-1 pointer">
@@ -49,21 +48,30 @@ const Footer = () => {
 					
 						</div>
 					</div>
-					<div className="col">
-						<Form>
+					<div className="col-sm-12 col-lg-5 mt-3">
+						<form>
 						<h3>Contact us</h3>
-							<Form.Group controlId="exampleForm.ControlInput1">
-								<Form.Label>Email address</Form.Label>
-								<Form.Control className="searchbar" type="email" placeholder="name@example.com" />
-							</Form.Group>
-							<Form.Group controlId="exampleForm.ControlTextarea1">
-								<Form.Label>What would you like to tell us?</Form.Label>
-								<Form.Control className="searchbar" as="textarea" rows={3} />
-							</Form.Group>
-							<button className="btn bg-light" variant="outline-secondary" type="submit">
-							Submit
+							<div className="mb-3 input-group">
+                                <span className="input-group-text span-custom">First Name</span>
+                                <input type="text" class="form-control inputfield" placeholder="..." />
+                            </div>
+							<div className="mb-3 input-group">
+                                <span className="input-group-text span-custom">Last Name</span>
+                                <input type="text" class="form-control inputfield" placeholder="..." />
+                            </div>
+							<div className="mb-3 input-group">
+                                <span className="input-group-text span-custom">Email</span>
+                                <input type="email" class="form-control inputfield" placeholder="..." />
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+							<div className="mb-3 input-group">
+								<span className="input-group-text span-custom">Message</span>
+								<textarea className="form-control inputfield" aria-label="With textarea"></textarea>
+							</div>
+							<button className="btn bg-light span-custom" variant="outline-secondary" type="submit">
+							    Submit
 							</button>
-						</Form>
+						</form>
               	    </div>
 				</div>
 				<hr className="hr" />
