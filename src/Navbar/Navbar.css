@@ -2,6 +2,7 @@
 .brandlogo {
   margin-right: 10px;
   color: #6b6b6b;
+  font-size: 2em;
 }
 
 .brandlogo:hover {
@@ -11,8 +12,15 @@
 
 .brand {
   text-decoration: underline #6b6b6b;
+  font-size: 2em;
 }
 
 .brand:hover {
   text-decoration: 3px underline #6b6b6b;
+}
+
+.brand-subtitle {
+  color: #7c7c7d;
+  margin-left: 10px;
+  font-size: 1.4em;
 }
