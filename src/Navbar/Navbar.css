@@ -1,13 +1,23 @@
 /* Brand logo */
 .brandlogo {
-  margin-right: 10px;
-  color: #6b6b6b;
-  font-size: 2em;
+  margin-right: 15px;
+  color: #fff;
+  font-size: 3em;
+  border: 1px solid #7c7c7d;
+  background-color: #5e2828;
+  border-radius: 20%;
+  animation-name: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
 }
 
-.brandlogo:hover {
-  transform: rotate(720deg);
-  transition: transform 2s;
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .brand {
