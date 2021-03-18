@@ -11,8 +11,19 @@ import {
     faSearch,
     faMapPin,
     faEnvelopeOpen,
-    faHeadset
+    faHeadset,
+
+    faSignInAlt,
+    faUtensils
 } from '@fortawesome/free-solid-svg-icons';
+    
+import {
+
+} from '@fortawesome/free-regular-svg-icons';
+
+import {
+
+} from '@fortawesome/free-brands-svg-icons';
 
 library.add(
     faHome,
@@ -26,5 +37,8 @@ library.add(
     faSearch,
     faMapPin,
     faEnvelopeOpen,
-    faHeadset
+    faHeadset,
+
+    faSignInAlt,
+    faUtensils
     );
