@@ -11,8 +11,9 @@
   padding-right: 10px;
 }
 
-:global(.button).search-button {
+:global(.button).search-icon {
   background: #bd1f1f;
+  color: white;
   border: none;
 }
 
