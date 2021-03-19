@@ -2,5 +2,16 @@
   width: 500px;
   height: 500px;
   min-height: 350px;
-  min-width: 350px;
+  min-width: 100px;
+}
+
+
+.sideBarContainer {
+  font-family: 'Dosis', sans-serif;
+  display:flex;
+}
+
+.col-8 {
+   flex: 0 0 0%; 
+  min-width: 95%; 
 }

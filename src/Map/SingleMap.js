@@ -3,9 +3,9 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import markerCustom from "../Assets/Img/MarkerIcon.png";
 import "leaflet/dist/images/marker-shadow.png";
-
 import "./Leaflet.css";
 import "leaflet/dist/leaflet.css";
+import Card from "../Card/Card";
 
 const SingleMap = ({values}) => {
   const icon = new Icon({
@@ -18,7 +18,9 @@ const SingleMap = ({values}) => {
   // values && console.log(values);
 
   return (
-    <MapContainer
+    <div className="sideBarContainer">
+    <Card>
+        <MapContainer className="singleMap"
       center={[52.520008, 13.404954]}
       zoom={10.5}
       scrollWheelZoom={false}
@@ -33,6 +35,8 @@ const SingleMap = ({values}) => {
         </Popup>
       </Marker>}
     </MapContainer>
+    </Card>
+    </div> 
   );
 };
 
