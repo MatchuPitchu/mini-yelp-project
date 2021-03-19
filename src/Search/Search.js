@@ -9,7 +9,6 @@ const Search = () => {
         <div>
             <SearchNav/>
             <RestaurantPage/>
-        
         </div>
     )
 }

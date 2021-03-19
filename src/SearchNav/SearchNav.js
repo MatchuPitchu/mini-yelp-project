@@ -29,11 +29,10 @@ const SearchNav = () => {
               placeholder="Location"
             />
           </p>
-          <div className={`button is-small ${styles['search-button']}`} >
-            <span className={`icon is-small ${styles['search-icon']}`}>
-                <i className="fas fa-search"></i>
-            </span>
-          </div>
+          <button className={`button is-small is-danger ${styles['search-icon']}`}>
+            {" "}
+            <i className="fas fa-search"></i>
+          </button>
         </div>
     </div>
   );
