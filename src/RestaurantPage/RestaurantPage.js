@@ -14,8 +14,19 @@ const RestaurantPage = () => {
   } = useContext(YelpContext);
   const {id} = useParams();
 
-  const currenRestau = Object.values(allRestau)
-  console.log(currenRestau)
+  const [restaurant, setRestaurant] = useState();
+
+  useEffect(() => {
+    fetch(`https://mini-yelp-api.herokuapp.com/api/v1/restaurants/${id}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setRestaurant(data);
+  
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="restauContainer">
@@ -24,6 +35,12 @@ const RestaurantPage = () => {
           <img src=" https://mini-yelp-api.herokuapp.com/static/images/10.jpg" />
         </div>
         <div className="restauHeader">
+        {restaurant && restaurant.name}
+          <ul>
+            {restaurant && restaurant.tags.map(tag => {
+              return <li>{tag.name}</li>
+            })}
+          </ul>
         </div>
       </Card>
     </div>
