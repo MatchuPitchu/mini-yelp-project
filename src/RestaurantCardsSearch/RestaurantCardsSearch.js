@@ -24,7 +24,7 @@ const RestaurantCards = () => {
             return (
                 <div key={item.id} className="col-md-6 mb-4">
                     <div className="card">
-                        <img src={item.image} className="card-img-top" alt="article header" />
+                    {item && <img src={`https://mini-yelp-api.herokuapp.com/static/img/${item.image}`}  className="card-img-top" alt="article header"/>}
                         <div className="card-body">
                             <h5 className="card-title">{item.name}</h5>
                             <h6 className="blockquote-footer">City: {item.city}</h6>

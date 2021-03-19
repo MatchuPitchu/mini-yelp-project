@@ -4,6 +4,8 @@ import { YelpContext } from "../Context/yelpContext";
 import "./RestaurantPage.css";
 import { useParams } from "react-router-dom";
 import Card from "../Card/Card";
+import Rating from 'react-rating';
+
 
 const RestaurantPage = () => {
   const {
@@ -32,16 +34,36 @@ const RestaurantPage = () => {
     <div className="restauContainer">
       <Card>
         <div className="restauImage">
-          <img src=" https://mini-yelp-api.herokuapp.com/static/images/10.jpg" />
+        {restaurant && <img src={`https://mini-yelp-api.herokuapp.com/static/img/${restaurant.image}`}/>}
         </div>
         <div className="restauHeader">
         {restaurant && restaurant.name}
-          <ul>
+        </div> 
+
+        <div className="rating">
+            <Rating
+                emptySymbol="far fa-star"
+                fullSymbol="fas fa-star"
+                readonly
+                fractions={2}
+                initialRating={restaurant && restaurant.reviews.map(review => {
+              return <li> {review.ratings}</li>
+            })}
+            />
+        </div>
+
+    
+        <div> <ul className="allTags">
             {restaurant && restaurant.tags.map(tag => {
-              return <li>{tag.name}</li>
+              return <li className="tag w3-tag w3-round w3-green w3-border w3-border-white"> {tag.name}</li>
             })}
           </ul>
-        </div>
+            </div> 
+
+            <div className="description">
+            {restaurant && restaurant.description}
+              </div>  
+
       </Card>
     </div>
   );
