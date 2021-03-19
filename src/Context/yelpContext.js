@@ -10,6 +10,9 @@ const YelpState = ({ children }) => {
   const [allRestau, setAllRestau] = useState([]);
   const [allReviews, setAllReviews] = useState([]);
   const [selectedRestau, setSelectedRestau] = useState();
+  const [selectedRestauSearch, setSelectedRestauSearch] = useState([]);
+  const [searchInputRestau, setSearchInputRestau] = useState();
+  const [searchInputLoc, setSearchInputLoc] = useState();
   
   useEffect(() => {
     fetch('https://mini-yelp-api.herokuapp.com/api/v1/cities')
@@ -52,7 +55,7 @@ const YelpState = ({ children }) => {
       
   return (
     <YelpContext.Provider
-        value={{ allCities, allTags, allRestau, allReviews, selectedRestau, setSelectedRestau }}
+        value={{ allCities, allTags, allRestau, allReviews, selectedRestau, setSelectedRestau, selectedRestauSearch, setSelectedRestauSearch, searchInputRestau, setSearchInputRestau, searchInputLoc, setSearchInputLoc }}
     >
       {children}
     </YelpContext.Provider>
