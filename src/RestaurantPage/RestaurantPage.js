@@ -4,10 +4,12 @@ import { YelpContext } from "../Context/yelpContext";
 import "./RestaurantPage.css";
 import { useParams } from "react-router-dom";
 import Card from "../Card/Card";
+import SingleMap from '../Map/SingleMap.js'
 import Rating from 'react-rating';
 
 
-const RestaurantPage = () => {
+
+const RestaurantPage = ({values}) => {
   const {
     allRestau,
     allReviews,
@@ -25,7 +27,7 @@ const RestaurantPage = () => {
       })
       .then((data) => {
         setRestaurant(data);
-  
+
       })
       .catch(console.error);
   }, []);
@@ -64,6 +66,7 @@ const RestaurantPage = () => {
               </div>  
 
       </Card>
+      <SingleMap values={values}/>
     </div>
   );
 };
