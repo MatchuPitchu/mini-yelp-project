@@ -4,7 +4,7 @@ import { YelpContext } from "../Context/yelpContext";
 import "./RestaurantPage.css";
 import { useParams } from "react-router-dom";
 import Card from "../Card/Card";
-import SingleMap from '../Map/SingleMap.js'
+import SingleMap from '../components/Map/SingleMap.js'
 import Rating from 'react-rating';
 
 

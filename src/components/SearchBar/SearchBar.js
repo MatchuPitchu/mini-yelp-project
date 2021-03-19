@@ -1,19 +1,18 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import SearchSuggestions from "../SearchSuggestions/SearchSuggestions";
+import SearchSuggestions from "../../SearchSuggestions/SearchSuggestions";
 import styles from "./SearchBar.module.css";
 // Import context - fetched Data
 import { useContext } from 'react';
-import { YelpContext } from '../Context/yelpContext';
+import { YelpContext } from '../../Context/yelpContext';
 
 const SearchBar = () => {
-  // Put all imported needed objects into variables
   const { searchInputRestau, setSearchInputRestau, searchInputLoc, setSearchInputLoc } = useContext(YelpContext);
 
   const updateRestau = ( {target} ) => {
     const value = target.value || '';
     // console.log(() => value);
-    setSearchInputRestau(value);
+    setSearchInputRestau(() => value);
   }
   
   const updateLoc = ( {target} ) => {

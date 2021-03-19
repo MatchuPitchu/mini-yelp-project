@@ -1,9 +1,8 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
-import markerCustom from "../Assets/Img/MarkerIcon.png";
+import markerCustom from "../../Assets/Img/MarkerIcon.png";
 import "leaflet/dist/images/marker-shadow.png";
-
 import "./Leaflet.css";
 import "leaflet/dist/leaflet.css";
 
