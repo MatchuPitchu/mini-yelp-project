@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { YelpContext } from '../Context/yelpContext';
 
 const RestaurantCards = () => {
-    const { allRestau, selectedRestau, setSelectedRestau } = useContext(YelpContext);
+    const { allRestau } = useContext(YelpContext);
     
     return (
     <div className="row">
@@ -14,10 +14,8 @@ const RestaurantCards = () => {
             return (
                 <div key={item.id} className="col-md-6 mb-4">
                     <div className="card image">
-
                     {item && <img src={`https://mini-yelp-api.herokuapp.com/static/img/${item.image}`}  className="card-img-top" alt="article header"/>}
 
-            
                     <div className="card-body">
                             <h5 className="card-title">{item.name}</h5>
                             <h6 className="blockquote-footer">City: {item.name}</h6>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './RestaurantCardsSearch.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,6 +17,11 @@ const RestaurantCards = () => {
             return restau;
         }
     });
+
+   useEffect(() => {
+    setSelectedRestau(newArr);
+   }, [newArr])
+    
 
     return (
     <div className="row">
