@@ -1,8 +1,27 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import SearchSuggestions from "../SearchSuggestions/SearchSuggestions";
 import styles from "./SearchBar.module.css";
+// Import context - fetched Data
+import { useContext } from 'react';
+import { YelpContext } from '../Context/yelpContext';
 
 const SearchBar = () => {
+  // Put all imported needed objects into variables
+  const { searchInputRestau, setSearchInputRestau, searchInputLoc, setSearchInputLoc } = useContext(YelpContext);
+
+  const updateRestau = ( {target} ) => {
+    const value = target.value || '';
+    console.log(() => value);
+    setSearchInputRestau(value);
+  }
+  
+  const updateLoc = ( {target} ) => {
+    const value = target.value || '';
+    console.log(value);
+    setSearchInputLoc(() => value);
+  }
+  
   return (
     <div className={styles.searchBarImage}>
       <div className={styles.searchBar}>
@@ -17,6 +36,8 @@ const SearchBar = () => {
             <input
               className={`input is-medium ${styles["input-central"]} inputfield`}
               type="text"
+              value={searchInputRestau}
+              onChange={e => updateRestau(e)}
               placeholder="Restaurant or Cousine"
             />
           </p>
@@ -29,13 +50,17 @@ const SearchBar = () => {
             <input
               className={`input is-medium ${styles["input-central"]} inputfield`}
               type="text"
+              value={searchInputLoc}
+              onChange={e => updateLoc(e)}
               placeholder="Location"
             />
           </p>
-          <button className={`button is-medium is-danger ${styles['search-icon']}`}>
-            {" "}
-            <i className="fas fa-search"></i>
-          </button>
+          <Link to="/search" >
+            <button className={`button is-medium is-danger ${styles['search-icon']}`}>
+              {" "}
+              <i className="fas fa-search"></i>
+            </button>
+          </Link>
         </div>
       </div>
       <SearchSuggestions />
