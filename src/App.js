@@ -6,8 +6,16 @@ import Footer from "./Footer/Footer";
 import {Switch, Route} from 'react-router-dom';
 import Search from './Search/Search';
 import { dom } from "@fortawesome/fontawesome-svg-core";
+// Import context - fetched Data
+import { useContext } from 'react';
+import { YelpContext } from './Context/yelpContext';
 
 const App = () => {
+  // Put all imported needed objects into variables
+  const { allCities, allTags, allRestau, allReviews, selectedRestau, setSelectedRestau } = useContext(YelpContext);
+
+  console.log(allCities)
+
   return (
     <div>
       <header>
@@ -16,7 +24,12 @@ const App = () => {
           <Route path='/' component={Navbar}/>
         </Switch>
       </header>
-      <Map />
+      <body>
+        <Map />
+        {allCities && allCities.map(item => {
+          return <p>{item.name}</p>
+        }) }
+      </body>
       <Footer />
     </div>
   );
