@@ -3,7 +3,6 @@ import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 // import fontawesome for React
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SearchBar from '../SearchBar/SearchBar';
 
 const Navbar = () => {
     
@@ -35,7 +34,6 @@ const Navbar = () => {
                 </div>
             </nav>
         </div>
-        <SearchBar/>
         </>
     )
 }
