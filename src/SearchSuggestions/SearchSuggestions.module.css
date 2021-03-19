@@ -1,0 +1,16 @@
+.suggestions {
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggestion {
+    font-size: .90rem;
+    margin-left: 4px;
+}
+
+.suggestions .icon {
+    width: 6rem; 
+    align-items: center;
+}
