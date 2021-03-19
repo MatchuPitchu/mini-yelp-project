@@ -1,4 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+
 
 export const YelpContext = createContext();
 
@@ -41,12 +43,15 @@ const YelpState = ({ children }) => {
             .catch(err => console.log(`All Restaurants: ${err}`));
     }, []);
 
+
     useEffect(() => {
         fetch('https://mini-yelp-api.herokuapp.com/api/v1/reviews')
             .then(res => res.json())
             .then(data => setAllReviews(data))
             .catch(err => console.log(`All Reviews: ${err}`));
     }, []);
+
+   
       
   return (
     <YelpContext.Provider
