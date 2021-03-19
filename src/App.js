@@ -1,24 +1,31 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 import Map from "./Map/Map";
-import RestaurantCards from './RestaurantCards/RestaurantCards';
-import RestaurantCardsSearch from './RestaurantCardsSearch/RestaurantCardsSearch';
+import RestaurantCards from "./RestaurantCards/RestaurantCards";
+import RestaurantCardsSearch from "./RestaurantCardsSearch/RestaurantCardsSearch";
 import Footer from "./Footer/Footer";
 import { dom } from "@fortawesome/fontawesome-svg-core";
 // Import context - fetched Data
-import { useContext } from 'react';
-import { YelpContext } from './Context/yelpContext';
-import RestaurantPage from './RestaurantPage/RestaurantPage';
+import { useContext } from "react";
+import { YelpContext } from "./Context/yelpContext";
+import RestaurantPage from "./RestaurantPage/RestaurantPage";
 
 const App = () => {
   // Put all imported needed objects into variables
-  const { allCities, allTags, allRestau, allReviews, selectedRestau, setSelectedRestau } = useContext(YelpContext);
+  const {
+    allCities,
+    allTags,
+    allRestau,
+    allReviews,
+    selectedRestau,
+    setSelectedRestau,
+  } = useContext(YelpContext);
   const [values, setValues] = useState();
 
-  console.log(allCities)
+  console.log(allCities);
 
   useEffect(() => {
     fetch("https://mini-yelp-api.herokuapp.com/api/v1/restaurants")
@@ -35,25 +42,29 @@ const App = () => {
   return (
     <div>
       <header>
-        <Route path='/' component={Navbar}/>
+        <Route path="/" component={Navbar} />
       </header>
       <body className="container">
         <div className="row">
           <div className="col-8 mt-5 mb-4">
             <Switch>
               <Route exact path="/">
-                <RestaurantCards />
+                <div className="row">
+                  <div className="col">
+                    <RestaurantCards />
+                  </div>
+                  <div className="col-3 mt-5 mb-4">
+                    <Map values={values} />
+                  </div>
+                </div>
               </Route>
               <Route path="/search">
                 <RestaurantCardsSearch />
-              </Route>       
-  <Route path="/:id">
-                <RestaurantPage />
+              </Route>
+              <Route path="/:id">
+                <RestaurantPage values={values}/>
               </Route>
             </Switch>
-          </div>
-          <div className="col-4 mt-5 mb-4">
-            <Map values={values}/>
           </div>
         </div>
       </body>
