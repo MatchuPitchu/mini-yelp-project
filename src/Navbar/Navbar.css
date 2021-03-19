@@ -1,6 +1,6 @@
 /* Brand logo */
 .brandlogo {
-  margin-right: 15px;
+  margin: 0 20px;
   color: #fff;
   font-size: 3em;
   padding: 10px;
@@ -24,6 +24,11 @@
 .brand {
   text-decoration: underline #6b6b6b;
   font-size: 2em;
+}
+
+.brandMini {
+  text-decoration: #6b6b6b;
+  font-size: 1.2em;
 }
 
 .brand:hover {

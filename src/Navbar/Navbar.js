@@ -13,7 +13,9 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-sm sticky-top navbar-light bg-light ">
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" to="./">
-                    <b className="brand"> Mini <FontAwesomeIcon className="brandlogo"icon={["fa", "utensils"]}/>Yelp</b>
+                        <b className="brandMini">Mini</b>
+                           <FontAwesomeIcon className="brandlogo" icon={["fa", "utensils"]}/>
+                        <b className="brand">Yelp</b>
                     </NavLink>
                     <button className="navbar-toggler toggler-custom mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
