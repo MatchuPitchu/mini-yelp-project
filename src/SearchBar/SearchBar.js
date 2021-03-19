@@ -12,13 +12,13 @@ const SearchBar = () => {
 
   const updateRestau = ( {target} ) => {
     const value = target.value || '';
-    console.log(() => value);
+    // console.log(() => value);
     setSearchInputRestau(value);
   }
   
   const updateLoc = ( {target} ) => {
     const value = target.value || '';
-    console.log(value);
+    // console.log(value);
     setSearchInputLoc(() => value);
   }
   
@@ -43,7 +43,7 @@ const SearchBar = () => {
           </p>
 
           <p className="control">
-            <button class="button is-static is-medium">Near</button>
+            <button className="button is-static is-medium">Near</button>
           </p>
 
           <p className="control">

@@ -27,7 +27,7 @@ const Map = ({values}) => {
   //     .catch(console.error);
   // }, []);
 
-  values && console.log(values);
+  // values && console.log(values);
 
   return (
     <MapContainer
@@ -41,8 +41,8 @@ const Map = ({values}) => {
       />
       //this maps all locationpins on the leafletmap
       {values &&
-        values.map((markerlocation) => (
-          <Marker
+        values.map((markerlocation, index) => (
+          <Marker key={index}
             position={[markerlocation.lat, markerlocation.long]}
             icon={icon}
           >
