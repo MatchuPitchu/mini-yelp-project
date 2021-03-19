@@ -50,16 +50,23 @@ const App = () => {
             <Switch>
               <Route exact path="/">
                 <div className="row">
-                  <div className="col">
+                  <div className="col-sm-8 col-md-9 mt-5">
                     <RestaurantCards />
                   </div>
-                  <div className="col-3 mt-5 mb-4">
+                  <div className="col-sm-4 col-md-3 mt-5 mb-4">
                     <Map values={values} />
                   </div>
                 </div>
               </Route>
               <Route path="/search">
-                <RestaurantCardsSearch />
+              <div className="row">
+                  <div className="col-sm-8 col-md-9 mt-5">
+                    <RestaurantCardsSearch />
+                  </div>
+                  <div className="col-sm-4 col-md-3 mt-5 mb-4">
+                    <Map values={selectedRestau} />
+                  </div>
+                </div>
               </Route>
               <Route path="/:id">
                 <RestaurantPage values={values}/>
