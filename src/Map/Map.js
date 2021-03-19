@@ -30,12 +30,8 @@ const Map = ({values}) => {
   // values && console.log(values);
 
   return (
-    <>
-    {values &&
-        values.map((markerlocation, index) => {
-          return (
     <MapContainer
-      center={[markerlocation.lat, markerlocation.long]}
+      center={[52.520008, 13.404954]}
       zoom={10.5}
       scrollWheelZoom={false}
     >
@@ -43,7 +39,7 @@ const Map = ({values}) => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {/* this maps all locationpins on the leafletmap */}
+      {/* //this maps all locationpins on the leafletmap */}
       {values &&
         values.map((markerlocation, index) => (
           <Marker key={index}
@@ -55,9 +51,8 @@ const Map = ({values}) => {
             </Popup>
           </Marker>
         ))}
-    </MapContainer>)})}
-   </> 
-  )
+    </MapContainer>
+  );
 };
 
 export default Map;
