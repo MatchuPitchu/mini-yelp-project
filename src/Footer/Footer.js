@@ -53,16 +53,16 @@ const Footer = () => {
 						<h3>Contact us</h3>
 							<div className="mb-3 input-group">
                                 <span className="input-group-text span-custom">First Name</span>
-                                <input type="text" class="form-control inputfield" placeholder="..." />
+                                <input type="text" className="form-control inputfield" placeholder="..." />
                             </div>
 							<div className="mb-3 input-group">
                                 <span className="input-group-text span-custom">Last Name</span>
-                                <input type="text" class="form-control inputfield" placeholder="..." />
+                                <input type="text" className="form-control inputfield" placeholder="..." />
                             </div>
 							<div className="mb-3 input-group">
                                 <span className="input-group-text span-custom">Email</span>
-                                <input type="email" class="form-control inputfield" placeholder="..." />
-                                <div id="emailHelp" class="form-text">Mail is only used to reply</div>
+                                <input type="email" className="form-control inputfield" placeholder="..." />
+                                <div id="emailHelp" className="form-text">Mail is only used to reply</div>
                             </div>
 							<div className="mb-3 input-group">
 								<span className="input-group-text span-custom">Message</span>
