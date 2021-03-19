@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import {Switch, Route} from 'react-router-dom';
@@ -14,8 +15,21 @@ import { YelpContext } from './Context/yelpContext';
 const App = () => {
   // Put all imported needed objects into variables
   const { allCities, allTags, allRestau, allReviews, selectedRestau, setSelectedRestau } = useContext(YelpContext);
+  const [values, setValues] = useState();
 
   console.log(allCities)
+
+  useEffect(() => {
+    fetch("https://mini-yelp-api.herokuapp.com/api/v1/restaurants")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setValues(data);
+        console.log(data);
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div>
@@ -35,7 +49,7 @@ const App = () => {
             </Switch>
           </div>
           <div className="col-4 mt-5 mb-4">
-            <Map />
+            <Map values={values}/>
           </div>
         </div>
       </body>
