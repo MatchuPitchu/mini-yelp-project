@@ -12,7 +12,7 @@ const Map = ({values}) => {
     iconUrl: markerCustom,
     iconSize: [35, 35],
   });
-
+ 
   // const [values, setValues] = useState();
   //
   // useEffect(() => {
