@@ -14,13 +14,12 @@
 }
   
   .restauImage img {
-    max-width: 200%;
+    max-width: 100%;
     max-height: 100%;
     align-items: center;
     display: flex;
     justify-content: center;
     border-radius: 6px;
-
   }
 
   .w3-tag  {
@@ -28,7 +27,6 @@
     margin-top: 10px;
     color: white;
     margin-left: 20px;
-
   }
 
   ul .tag {

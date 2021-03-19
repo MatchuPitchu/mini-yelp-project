@@ -59,7 +59,6 @@ const RestaurantPage = () => {
             })}
           </ul>
             </div> 
-
             <div className="description">
             {restaurant && restaurant.description}
               </div>  

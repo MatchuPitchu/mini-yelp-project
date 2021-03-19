@@ -13,7 +13,7 @@ const RestaurantCards = () => {
         {allRestau && allRestau.map(item => {
             return (
                 <div key={item.id} className="col-md-6 mb-4">
-                    <div className="card">
+                    <div className="card image">
 
                     {item && <img src={`https://mini-yelp-api.herokuapp.com/static/img/${item.image}`}  className="card-img-top" alt="article header"/>}
 
