@@ -14,9 +14,6 @@ const RestaurantPage = () => {
   } = useContext(YelpContext);
   const {id} = useParams();
 
-  const currenRestau = Object.values(allRestau)
-  console.log(currenRestau)
-
   return (
     <div className="restauContainer">
       <Card>
