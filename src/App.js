@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import {Switch, Route} from 'react-router-dom';
@@ -29,7 +30,7 @@ const App = () => {
       })
       .catch(console.error);
   }, []);
-  
+
   return (
     <div>
       <header>
@@ -48,7 +49,7 @@ const App = () => {
             </Switch>
           </div>
           <div className="col-4 mt-5 mb-4">
-            <Map />
+            <Map values={values}/>
           </div>
         </div>
       </body>
