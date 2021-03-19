@@ -64,7 +64,6 @@ const RestaurantPage = ({values}) => {
             <div className="description">
             {restaurant && restaurant.description}
               </div>  
-
       </Card>
       <SingleMap values={values}/>
     </div>

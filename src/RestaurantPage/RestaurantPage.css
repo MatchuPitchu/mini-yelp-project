@@ -1,6 +1,10 @@
 .blogPostContainer {
-    width: 70% !important;
+    width: 60% !important;
     font-family: 'Dosis', sans-serif;
+  }
+  .restauContainer {
+    display: flex;
+    flex-direction: row;
   }
 
   .restauImage {
