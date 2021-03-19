@@ -13,19 +13,19 @@ const Navbar = () => {
                 <div className="container-fluid">
                     <NavLink className="navbar-brand" to="./">
                         <FontAwesomeIcon className="brandlogo" icon={['fa', 'utensils']} />
-                        <b className="brand">Mini-yelp</b> Project
+                        <b className="brand">Mini-yelp</b><span className="brand-subtitle">Project</span>
                     </NavLink>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler toggler-custom mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarToggler">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <NavLink className="nav-link" active="active" to="./register" >Register</NavLink>
+                            <li className="nav-item mx-auto">
+                                <NavLink className="nav-link btn-register" active="active" to="./register" >Take part</NavLink>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item mx-auto">
                                 <NavLink className="nav-link" active="active" to="./login" >
-                                    <FontAwesomeIcon icon={['fa', 'sign-in-alt']} />
+                                    <FontAwesomeIcon className="icon-login" icon={['fa', 'sign-in-alt']} />
                                 </NavLink>
                             </li>
                         </ul>                   

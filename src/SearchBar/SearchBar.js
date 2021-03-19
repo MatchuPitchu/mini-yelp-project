@@ -6,7 +6,7 @@ const SearchBar = () => {
   return (
     <div className={styles.searchBarImage}>
         <div className={styles.searchBar}>
-      <h2> Find your table for any occasion </h2>
+      <h2>Find a Restaurant for Any Occasion</h2>
       
         <div className="field has-addons">
           <p className="control">
@@ -15,7 +15,7 @@ const SearchBar = () => {
 
           <p className="control">
             <input
-              className={`input is-medium ${styles["input-central"]}`}
+              className={`input is-medium ${styles["input-central"]} inputfield`}
               type="text"
               placeholder="Restaurant or Cousine"
             />
@@ -27,7 +27,7 @@ const SearchBar = () => {
 
           <p className="control">
             <input
-              className={`input is-medium ${styles["input-central"]}`}
+              className={`input is-medium ${styles["input-central"]} inputfield`}
               type="text"
               placeholder="Location"
             />
