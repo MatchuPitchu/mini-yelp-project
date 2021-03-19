@@ -46,8 +46,7 @@ const App = () => {
               </Route>
               <Route path="/search">
                 <RestaurantCardsSearch />
-              </Route>
-              
+              </Route>       
   <Route path="/:id">
                 <RestaurantPage />
               </Route>
