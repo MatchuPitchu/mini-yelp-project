@@ -15,7 +15,7 @@ const SingleMap = ({values}) => {
 
 
 
-  values && console.log(values);
+  // values && console.log(values);
 
   return (
     <MapContainer

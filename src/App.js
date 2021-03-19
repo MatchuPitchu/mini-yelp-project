@@ -25,7 +25,7 @@ const App = () => {
   } = useContext(YelpContext);
   const [values, setValues] = useState();
 
-  console.log(allCities);
+  // console.log(allCities);
 
   useEffect(() => {
     fetch("https://mini-yelp-api.herokuapp.com/api/v1/restaurants")
@@ -34,7 +34,7 @@ const App = () => {
       })
       .then((data) => {
         setValues(data);
-        console.log(data);
+        // console.log(data);
       })
       .catch(console.error);
   }, []);
