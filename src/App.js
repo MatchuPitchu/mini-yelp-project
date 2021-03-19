@@ -11,6 +11,7 @@ import { dom } from "@fortawesome/fontawesome-svg-core";
 // Import context - fetched Data
 import { useContext } from 'react';
 import { YelpContext } from './Context/yelpContext';
+import RestaurantPage from './RestaurantPage/RestaurantPage';
 
 const App = () => {
   // Put all imported needed objects into variables
@@ -45,6 +46,10 @@ const App = () => {
               </Route>
               <Route path="/search">
                 <RestaurantCardsSearch />
+              </Route>
+              
+  <Route path="/:id">
+                <RestaurantPage />
               </Route>
             </Switch>
           </div>
