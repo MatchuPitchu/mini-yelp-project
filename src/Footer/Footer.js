@@ -30,7 +30,7 @@ const Footer = () => {
                             <div className="col-1">
 						        <FontAwesomeIcon icon={['fa', 'envelope-open']} fixedWidth/>
                             </div>
-							<div className="col">thesportsblog@posteo.de</div>							
+							<div className="col">mini-yelp@posteo.de</div>							
 						</div>
 					</div>
 					<div className="col-sm-6 col-lg-3 mt-3">
@@ -62,7 +62,7 @@ const Footer = () => {
 							<div className="mb-3 input-group">
                                 <span className="input-group-text span-custom">Email</span>
                                 <input type="email" class="form-control inputfield" placeholder="..." />
-                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                                <div id="emailHelp" class="form-text">Mail is only used to reply</div>
                             </div>
 							<div className="mb-3 input-group">
 								<span className="input-group-text span-custom">Message</span>
