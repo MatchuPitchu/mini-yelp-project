@@ -6,26 +6,12 @@ import "leaflet/dist/images/marker-shadow.png";
 
 import "./Leaflet.css";
 import "leaflet/dist/leaflet.css";
-// Import context - fetched Data
-import { useContext } from "react";
-import { YelpContext } from "./Context/yelpContext";
 
 const Map = ({values}) => {
   const icon = new Icon({
     iconUrl: markerCustom,
     iconSize: [35, 35],
   });
-
-  // Put all imported needed objects into variables
-  const {
-    allCities,
-    allTags,
-    allRestau,
-    allReviews,
-    selectedRestau,
-    setSelectedRestau,
-  } = useContext(YelpContext);
-
 
   // const [values, setValues] = useState();
   //
