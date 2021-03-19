@@ -4,7 +4,8 @@ import {
     faUtensils,
     faMapPin,
     faHeadset,
-    faEnvelopeOpen
+    faEnvelopeOpen,
+    faInfoCircle
 } from '@fortawesome/free-solid-svg-icons';
     
 import {
@@ -25,5 +26,6 @@ library.add(
     faEnvelopeOpen,
     faFacebook,
     faInstagram,
-    faTwitter
+    faTwitter,
+    faInfoCircle
     );
