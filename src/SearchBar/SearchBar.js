@@ -1,4 +1,5 @@
 import React from "react";
+import SearchSuggestions from "../SearchSuggestions/SearchSuggestions";
 import styles from "./SearchBar.module.css";
 
 
@@ -39,6 +40,7 @@ const SearchBar = () => {
           </div>
         </div>
       </div>
+      <SearchSuggestions/>
     </div>
   );
 };

@@ -7,7 +7,7 @@
   border: none;
 }
 
-:global(.icon) {
+:global(.icon).search-icon {
   color: white;
 }
 
@@ -20,15 +20,11 @@
     url("https://table.skift.com/wp-content/uploads/2018/04/opentable-facebook-4-23-2000x1000.jpg");
   background-position: cover;
   min-width: 100vw;
-  background-position: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   height: 40rem;
   opacity: 1;
-  background-position: 100%;
-  background-position-x: 100%;
-  background-position-y: center;
-}
+  }
 
 .searchBar {
   display: flex;
@@ -41,12 +37,10 @@
 .searchBar h2 {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  letter-spacing: 1px;
   padding-bottom: 10px;
   font-size: 48px;
   line-height: 56px;
-  margin: 0 0 16px;
-  font-family: "Fredoka One", cursive;
+  font-family: 'Fredoka One', cursive;
   color: #fff;
   text-align: center;
 }
