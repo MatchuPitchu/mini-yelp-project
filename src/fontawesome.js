@@ -9,11 +9,11 @@ import {
     faCarrot,
     faSeedling,
     faFish,
-    faSearch
+    faSearch,
+    faStar
 } from '@fortawesome/free-solid-svg-icons';
     
 import {
-
 } from '@fortawesome/free-regular-svg-icons';
 
 import {
@@ -35,5 +35,6 @@ library.add(
     faCarrot,
     faSeedling,
     faFish,
-    faSearch
+    faSearch,
+    faStar,
     );

@@ -5,7 +5,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Searchbar from './components/Searchbar';
 import RestaurantCards from "./components/RestaurantCards";
-import RestaurantPage from "./components/RestaurantPage/RestaurantPage";
+import RestaurantPage from "./components/RestaurantPage";
 import Footer from "./components/Footer";
 import Spinner from "./components/Spinner";
 // Import context - fetched Data
@@ -18,21 +18,6 @@ const App = () => {
     loading,
     error
   } = useContext(YelpContext);
-  const [values, setValues] = useState();
-
-  // console.log(allCities);
-
-  useEffect(() => {
-    fetch("https://mini-yelp-api.herokuapp.com/api/v1/restaurants")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setValues(data);
-        // console.log(data);
-      })
-      .catch(console.error);
-  }, []);
 
   if(loading)
     return <Spinner />;
@@ -45,7 +30,7 @@ const App = () => {
       <Navbar />
       <Searchbar/>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <body className="container">
             <div className="row">
               <div className="col-8 mt-5 mb-4">
@@ -55,7 +40,7 @@ const App = () => {
           </body>
         </Route>
         <Route path="/restaurant/:id">
-          <RestaurantPage values={values}/>
+          <RestaurantPage />
         </Route>
       </Switch>
       <Footer />

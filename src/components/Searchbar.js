@@ -12,11 +12,8 @@ const Searchbar = () => {
     setSearchInputRestau(() => value);
   }
   
-  console.log(searchInputRestau);
-
   const updateLoc = ( {target} ) => {
     const value = target.value || '';
-    // console.log(value);
     setSearchInputLoc(() => value);
   }
   
@@ -47,7 +44,7 @@ const Searchbar = () => {
             </button>
           </Link>
         </div>
-        <div className="d-flex justify-content-around tags">
+        <div className="d-flex justify-content-center tags">
           <div className="container-tags">
             <FontAwesomeIcon className="tagIcon" icon={["fas", "carrot"]} />
             <span>Veggie</span>

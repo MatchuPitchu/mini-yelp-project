@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="container navbar-bg">
             <nav className="navbar navbar-expand-sm sticky-top navbar-light bg-light ">
                 <div className="container-fluid">
-                    <NavLink className="navbar-brand" to="./">
+                    <NavLink className="navbar-brand" to="/">
                         <b className="brandMini">Mini</b>
                            <FontAwesomeIcon className="brandlogo" icon={["fa", "utensils"]}/>
                         <b className="brand">Yelp</b>
@@ -20,10 +20,10 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarToggler">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item mx-auto">
-                                <NavLink className="nav-link btn-register" active="active" to="./register" >Take part</NavLink>
+                                <NavLink className="nav-link btn-register" active="active" to="/register" >Take part</NavLink>
                             </li>
                             <li className="nav-item mx-auto">
-                                <NavLink className="nav-link" active="active" to="./login" >
+                                <NavLink className="nav-link" active="active" to="/login" >
                                     <FontAwesomeIcon className="icon-login" icon={['fa', 'sign-in-alt']} />
                                 </NavLink>
                             </li>

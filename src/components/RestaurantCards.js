@@ -3,14 +3,22 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
 import { YelpContext } from '../Context/yelpContext';
+import Spinner from './Spinner';
 import Map from './Map/Map';
 
 const RestaurantCards = () => {
-    const { allRestau, searchInputRestau, searchInputLoc, selectedRestau, setSelectedRestau } = useContext(YelpContext);
+    const { 
+        allRestau, 
+        searchInputRestau,
+        searchInputLoc, 
+        selectedRestau, 
+        setSelectedRestau,
+        loading 
+    } = useContext(YelpContext);
 
     useEffect(() => {
         if(!searchInputLoc || !searchInputRestau) {
-            setSelectedRestau(allRestau);
+            setSelectedRestau(() => allRestau);
         }
 
         if(searchInputLoc && !searchInputRestau) {
@@ -30,7 +38,9 @@ const RestaurantCards = () => {
         }
     }, [searchInputLoc, searchInputRestau])
 
-    if(allRestau)
+    if(loading)
+        return <Spinner />;
+
     return (
     <div className="row">
         <div className="col-sm-8 col-md-9 mt-5">
@@ -46,7 +56,7 @@ const RestaurantCards = () => {
                                 <h6 className="blockquote-footer">Adress: {item.address}</h6>
                                 <p className="card-text">{item.description}</p>
                                 <div className="text-center linkToRestau">
-                                    <Link to={`/${item.id}`} className="btn-restauTeaser">
+                                    <Link to={`/restaurant/${item.id}`} className="btn-restauTeaser">
                                         <FontAwesomeIcon className="infoIcon" icon={["fas", "info-circle"]}/>
                                         Look in detail
                                     </Link>

@@ -140,8 +140,10 @@ body {
 .container-tags {
   border: 1px solid #fff;
   border-radius: 3px;
-  padding: 3px 7px;
-  background-color: #5e282890;
+  padding: 5px 10px;
+  background-color: #5e2828;
+  color: #fff;
+  margin-right: 5px;
 }
 
 .tagIcon {
@@ -177,6 +179,39 @@ body {
 
 .infoIcon {
   margin-right: 10px;
+}
+
+/* Restaurant Page */
+
+.container-RestauImg {
+  position: relative;
+}
+
+.container-RestauImg img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  color: #fff;
+  font-weight: 700;
+  width: 100%;
+  max-height: 100%;
+  top: 100%;
+  left: 50%;
+  padding: 50px 10px;
+  transform: translate(-50%, -100%);
+  opacity: 1;
+  text-align: center;
+  background: #5e282890;
+}
+
+.hReview {
+  color: #242424;
 }
 
 /* Footer */
@@ -246,6 +281,13 @@ body {
 }
 
 .span-custom {
+  width: 90px;
+  font-size: 0.8em;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-footer {
   width: 90px;
   font-size: 0.8em;
 }

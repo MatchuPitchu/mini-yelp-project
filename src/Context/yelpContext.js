@@ -10,9 +10,9 @@ const YelpState = ({ children }) => {
   const [allRestau, setAllRestau] = useState([]);
   const [allReviews, setAllReviews] = useState([]);
   const [selectedRestau, setSelectedRestau] = useState();
-  const [selectedRestauSearch, setSelectedRestauSearch] = useState([]);
   const [searchInputRestau, setSearchInputRestau] = useState();
   const [searchInputLoc, setSearchInputLoc] = useState();
+  const [myRestau, setMyRestau] = useState({});
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState('');
   
@@ -41,7 +41,6 @@ const YelpState = ({ children }) => {
       setLoading(false);
       }, []);
   
-  console.log(error);
 //   ERROR: Don't understand m2m  
 //   useEffect(() => {
 //           fetch('https://mini-yelp-api.herokuapp.com/api/v1/tags/m2m')
@@ -54,15 +53,17 @@ const YelpState = ({ children }) => {
       setLoading(true);
       fetch('https://mini-yelp-api.herokuapp.com/api/v1/restaurants')
         .then(res => res.json())
-        .then(data => setAllRestau(data))
+        .then(data => {
+          setAllRestau(() => data);
+          setSelectedRestau(() => data);
+        })
         .catch(err => {
           console.log(`All Restaurants: ${err}`);
           setError(() => err);
         });
       setLoading(false);
     }, []);
-
-
+    
     useEffect(() => {
       setLoading(true);
       fetch('https://mini-yelp-api.herokuapp.com/api/v1/reviews')
@@ -86,12 +87,12 @@ const YelpState = ({ children }) => {
           allReviews,
           selectedRestau, 
           setSelectedRestau, 
-          selectedRestauSearch, 
-          setSelectedRestauSearch, 
           searchInputRestau, 
           setSearchInputRestau, 
           searchInputLoc, 
           setSearchInputLoc,
+          myRestau,
+          setMyRestau,
           loading,
           setLoading,
           error,
