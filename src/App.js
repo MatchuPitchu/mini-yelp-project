@@ -6,6 +6,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Searchbar from './components/Searchbar';
 import RestaurantCards from "./components/RestaurantCards";
+import Map from "./components/Map/Map";
 import RestaurantPage from "./components/RestaurantPage";
 import Footer from "./components/Footer";
 import Spinner from "./components/Spinner";
@@ -28,18 +29,17 @@ const App = () => {
       <Navbar />
       <Searchbar/>
       <Switch>
-        <Route exact path="/">
-          <body className="container">
-            <div className="row">
-              <div className="col-8 mt-5 mb-4">
+          <Route exact path="/">
+            <Map />
+            <body className="container">
+              <div className="row">
                 <RestaurantCards />
               </div>
-            </div>
-          </body>
-        </Route>
-        <Route path="/restaurant/:id">
-          <RestaurantPage />
-        </Route>
+            </body>
+          </Route>
+          <Route path="/restaurant/:id">
+            <RestaurantPage />
+          </Route>
       </Switch>
       <Footer />
     </div>

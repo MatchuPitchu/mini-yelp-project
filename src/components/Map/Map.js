@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { YelpContext } from '../../Context/yelpContext';
+import Spinner from '../Spinner';
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import markerCustom from "../../Assets/Img/MarkerIcon.png";
@@ -6,52 +8,63 @@ import "leaflet/dist/images/marker-shadow.png";
 import "./Leaflet.css";
 import "leaflet/dist/leaflet.css";
 
-const Map = ({values}) => {
+const Map = () => {
   const icon = new Icon({
     iconUrl: markerCustom,
-    iconSize: [35, 35],
-    
+    iconSize: [25, 25],
   });
- 
-  // const [values, setValues] = useState();
-  //
-  // useEffect(() => {
-  //   fetch("https://mini-yelp-api.herokuapp.com/api/v1/restaurants")
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((data) => {
-  //       setValues(data);
-  //       console.log(data);
-  //     })
-  //     .catch(console.error);
-  // }, []);
 
-  // values && console.log(values);
+  const { 
+    allRestau, 
+    searchInputRestau,
+    searchInputLoc, 
+    selectedRestau, 
+    setSelectedRestau,
+    position,
+    setPosition,
+    loading,
+    error
+  } = useContext(YelpContext);
+
+  // useEffect(() => {
+  //   setPosition(() => [selectedRestau[0].lat, selectedRestau[0].long])
+  //   console.log(selectedRestau);
+  // }, [setSelectedRestau]);
+
+  const pos = [52.520008, 13.404954];
+
+  if(loading)
+  return <Spinner />;
+
+  if(error)
+  return <div>Sorry for the inconvenience, but there was an error retrieving the data: {error}</div>;
 
   return (
-    <MapContainer
-      center={[52.520008, 13.404954]}
-      zoom={10.5}
-      scrollWheelZoom={false}
-    >
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {/* //this maps all locationpins on the leafletmap */}
-      {values &&
-        values.map((markerlocation, index) => (
-          <Marker key={index}
-            position={[markerlocation.lat, markerlocation.long]}
-            icon={icon}
-          >
-            <Popup>
-              <h6>{markerlocation.description}</h6> <br /> {markerlocation.address}
-            </Popup>
-          </Marker>
-        ))}
-    </MapContainer>
+    <div className="map-container">
+      <MapContainer
+        center={pos}
+        zoom={10.5}
+        scrollWheelZoom={false}
+        style={{width: '100%', height: '300px'}}
+      >
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {selectedRestau && selectedRestau.map((item, index) => (
+            <Marker 
+              key={index}
+              position={[item.lat, item.long]}
+              icon={icon}
+            >
+              <Popup>
+                <h6>{item.description}</h6>
+                <p>{item.address}</p>
+              </Popup>
+            </Marker>
+          ))}
+      </MapContainer>
+    </div>
   );
 };
 

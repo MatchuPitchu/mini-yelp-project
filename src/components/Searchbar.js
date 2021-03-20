@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useContext } from 'react';
 import { YelpContext } from '../Context/yelpContext';
 
 const Searchbar = () => {

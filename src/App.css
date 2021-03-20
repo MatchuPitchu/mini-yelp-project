@@ -150,7 +150,17 @@ body {
   margin-right: 6px;
 }
 
+/* Map */
+.map-container {
+  border-top: 5px solid #5e2828;
+  border-bottom: 5px solid #5e2828;
+}
+
 /* Restaurand Cards Landing Page */
+.cardImg {
+  height: 150px;
+  object-fit: cover;
+}
 
 .linkToRestau {
   background-color: #ccc;
