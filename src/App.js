@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { YelpContext } from "./Context/yelpContext";
 import { Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -8,9 +9,6 @@ import RestaurantCards from "./components/RestaurantCards";
 import RestaurantPage from "./components/RestaurantPage";
 import Footer from "./components/Footer";
 import Spinner from "./components/Spinner";
-// Import context - fetched Data
-import { useContext } from "react";
-import { YelpContext } from "./Context/yelpContext";
 
 const App = () => {
   // Put all imported needed objects into variables
