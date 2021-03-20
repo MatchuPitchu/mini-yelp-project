@@ -10,6 +10,242 @@ body {
   background-color: #f8f9fa;
 }
 
-h2 {
-  text-decoration: underline #c8ccd0;
+/* Navbar */
+.brandlogo {
+  margin: 0 20px;
+  color: #fff;
+  font-size: 3em;
+  padding: 10px;
+  border: 1px solid #7c7c7d;
+  background-color: #5e2828;
+  border-radius: 20%;
+  animation-name: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.brand {
+  text-decoration: underline #6b6b6b;
+  font-size: 2em;
+}
+
+.brandMini {
+  text-decoration: #6b6b6b;
+  font-size: 1.2em;
+}
+
+.brand:hover {
+  text-decoration: 3px underline #6b6b6b;
+}
+
+.brand-subtitle {
+  color: #7c7c7d;
+  margin-left: 10px;
+  font-size: 1.4em;
+}
+
+.toggler-custom {
+  margin: 10px 0px;
+}
+
+.btn-register {
+  border: 1px solid #7c7c7d;
+  border-radius: 3px;
+  margin: 0px 10px;
+  width: 100px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn-register:hover {
+  background-color: #5e2828;
+  color: #fff !important;
+}
+
+.icon-login:hover {
+  color: #5e2828;
+}
+
+/* Searchbar Header Image */
+
+.form-control::placeholder {
+  color: #ccc;
+}
+
+.searchbar {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.searchbar h2 {
+  font-size: 2.6em;
+  color: #fff;
+  line-height: 1.2em;
+  padding: 10px;
+  text-align: center;
+}
+
+.searchbarImage {
+  background-image: linear-gradient(to right, #5e282880, #5e282880),
+    url("./Assets/Restaurant\ unsplash\ petr-sevcovic.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 25em;
+  padding: 6em 0;
+}
+
+.search-first {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-middle {
+  border-radius: 0;
+}
+
+.search-last {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #5e2828;
+  color: #fff;
+}
+
+.search-last:hover {
+  background-color: #411b1b;
+  color: #fff;
+}
+
+.search-last:focus {
+  background-color: #411b1b;
+  color: #fff;
+  outline: none;
+  border-color: #6c757d;
+  box-shadow: 0 0 10px #6c757d;
+}
+
+.tags {
+  color: #fff;
+}
+
+.container-tags {
+  border: 1px solid #fff;
+  border-radius: 3px;
+  padding: 3px 7px;
+  background-color: #5e282890;
+}
+
+.tagIcon {
+  margin-right: 6px;
+}
+
+/* Restaurand Cards Landing Page */
+
+.linkToRestau {
+  background-color: #ccc;
+  padding: 5px 10px;
+  border-radius: 0;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.linkToRestau:hover {
+  background-color: #5e2828;
+  border-radius: 3px;
+}
+
+.btn-restauTeaser,
+.btn-restauTeaser:hover,
+.btn-restauTeaser:focus {
+  display: inline-block;
+  text-decoration: none !important;
+  color: #ffffff;
+  border: 0;
+  box-shadow: 0;
+}
+
+.infoIcon {
+  margin-right: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: #5e2828;
+  margin-top: 40px;
+  padding: 20px 0;
+  color: #fff;
+  border-top: 1px solid #191919;
+}
+
+.footer a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.hr {
+  background-color: #fff;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.socialicon {
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+}
+
+.bg-light {
+  background-color: #fff;
+  opacity: 1;
+}
+
+.bg-light:hover {
+  background-color: #fff;
+  color: #353636;
+  opacity: 1;
+}
+
+/* Form in the Footer */
+.inputfield {
+  padding: 10px;
+  border: solid #c8ccd0 1px;
+  border-radius: 3px 0px 0px 3px;
+  -webkit-transition: box-shadow linear 0.2s;
+  transition: box-shadow linear 0.2s;
+  border-right: 0;
+}
+
+.inputfield:focus {
+  outline: none;
+  border-color: #6c757d;
+  box-shadow: 0 0 10px #6c757d;
+}
+
+.inputfield:hover {
+  border-color: #6c757d;
+  box-shadow: 0 0 10px #6c757d;
+}
+
+#emailHelp {
+  font-size: 0.8em;
+  font-style: italic;
+  margin-left: 11px;
+}
+
+.span-custom {
+  width: 90px;
+  font-size: 0.8em;
 }

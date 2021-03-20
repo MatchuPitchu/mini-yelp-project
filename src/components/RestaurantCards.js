@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './RestaurantCards.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
-import { YelpContext } from '../../Context/yelpContext';
-import Map from '../Map/Map';
+import { YelpContext } from '../Context/yelpContext';
+import Map from './Map/Map';
 
 const RestaurantCards = () => {
     const { allRestau, searchInputRestau, searchInputLoc, selectedRestau, setSelectedRestau } = useContext(YelpContext);
@@ -12,15 +11,26 @@ const RestaurantCards = () => {
     useEffect(() => {
         if(!searchInputLoc || !searchInputRestau) {
             setSelectedRestau(allRestau);
-        }        
+        }
 
-        if(searchInputLoc || searchInputRestau) {
-            const newArr = allRestau.filter((item) => item.city.match(searchInputLoc) && item.name.match(searchInputRestau));
-            console.log(newArr);
+        if(searchInputLoc && !searchInputRestau) {
+            const newArr = allRestau.filter((item) => item.city.match(searchInputLoc));
             setSelectedRestau(() => newArr);
+        }
+
+        if(!searchInputLoc && searchInputRestau) {
+            const newArr = allRestau.filter((item) => item.name.match(searchInputRestau));
+            setSelectedRestau(() => newArr);
+        }
+
+        if(searchInputLoc && searchInputRestau) {
+            const newArr = allRestau.filter((item) => item.city.match(searchInputLoc));
+            const newArr2 = newArr.filter((item) => item.name.match(searchInputRestau));
+            setSelectedRestau(() => newArr2);
         }
     }, [searchInputLoc, searchInputRestau])
 
+    if(allRestau)
     return (
     <div className="row">
         <div className="col-sm-8 col-md-9 mt-5">

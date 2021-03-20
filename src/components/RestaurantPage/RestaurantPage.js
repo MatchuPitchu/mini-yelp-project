@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useContext } from "react";
-import { YelpContext } from "../Context/yelpContext";
+import { YelpContext } from "../../Context/yelpContext";
 import "./RestaurantPage.css";
 import { useParams } from "react-router-dom";
-import Card from "../Card/Card";
-import SingleMap from '../components/Map/SingleMap.js'
 import Rating from 'react-rating';
-
-
 
 const RestaurantPage = ({values}) => {
   const {
@@ -37,7 +33,7 @@ const RestaurantPage = ({values}) => {
 
   return (
     <div className="restauContainer">
-      <Card>
+      {/* <Card>
         <div className="restauImage">
           {restaurant && <img src={`https://mini-yelp-api.herokuapp.com/static/img/${restaurant.image}`}/>}
         </div>
@@ -74,7 +70,7 @@ const RestaurantPage = ({values}) => {
               return (
               <div key={review.id}>
                 <h6>{review.title}</h6>
-                {/* <strong>{review.date}</strong> */}
+                <strong>{review.date}</strong>
                 <small>{review.first_name} {review.last_name}</small>
                 <p>{review.comment}</p>
                 <p>rating : {review.rating}</p>
@@ -84,7 +80,7 @@ const RestaurantPage = ({values}) => {
             })}
 
       </Card>
-      <SingleMap values={values}/>
+      <SingleMap values={values}/> */}
     </div>
   );
 };

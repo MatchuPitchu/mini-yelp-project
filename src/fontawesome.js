@@ -5,7 +5,11 @@ import {
     faMapPin,
     faHeadset,
     faEnvelopeOpen,
-    faInfoCircle
+    faInfoCircle,
+    faCarrot,
+    faSeedling,
+    faFish,
+    faSearch
 } from '@fortawesome/free-solid-svg-icons';
     
 import {
@@ -27,5 +31,9 @@ library.add(
     faFacebook,
     faInstagram,
     faTwitter,
-    faInfoCircle
+    faInfoCircle,
+    faCarrot,
+    faSeedling,
+    faFish,
+    faSearch
     );
