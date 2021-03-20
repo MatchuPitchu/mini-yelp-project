@@ -10,7 +10,7 @@ const override = css`
 `;
 
 const Spinner = () => {
-    let [color] = useState("#5E2828");
+    const [color] = useState("#5E2828");
   
     return (
       <div style={{padding: '100px'}}>
