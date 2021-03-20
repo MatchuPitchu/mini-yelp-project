@@ -5,7 +5,7 @@ import markerCustom from "../../Assets/Img/MarkerIcon.png";
 import "leaflet/dist/images/marker-shadow.png";
 import "./Leaflet.css";
 import "leaflet/dist/leaflet.css";
-import Card from "../../Card/Card";
+import Card from "../Card/Card";
 
 const SingleMap = ({values}) => {
   const icon = new Icon({

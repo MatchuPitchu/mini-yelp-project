@@ -1,25 +1,45 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './RestaurantCards.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useContext } from 'react';
-import { YelpContext } from '../../Context/yelpContext';
-import Map from '../Map/Map';
+import { YelpContext } from '../Context/yelpContext';
+import Spinner from './Spinner';
+import Map from './Map/Map';
 
 const RestaurantCards = () => {
-    const { allRestau, searchInputRestau, searchInputLoc, selectedRestau, setSelectedRestau } = useContext(YelpContext);
+    const { 
+        allRestau, 
+        searchInputRestau,
+        searchInputLoc, 
+        selectedRestau, 
+        setSelectedRestau,
+        loading 
+    } = useContext(YelpContext);
 
     useEffect(() => {
         if(!searchInputLoc || !searchInputRestau) {
-            setSelectedRestau(allRestau);
-        }        
+            setSelectedRestau(() => allRestau);
+        }
 
-        if(searchInputLoc || searchInputRestau) {
-            const newArr = allRestau.filter((item) => item.city.match(searchInputLoc) && item.name.match(searchInputRestau));
-            console.log(newArr);
+        if(searchInputLoc && !searchInputRestau) {
+            const newArr = allRestau.filter((item) => item.city.match(searchInputLoc));
             setSelectedRestau(() => newArr);
         }
+
+        if(!searchInputLoc && searchInputRestau) {
+            const newArr = allRestau.filter((item) => item.name.match(searchInputRestau));
+            setSelectedRestau(() => newArr);
+        }
+
+        if(searchInputLoc && searchInputRestau) {
+            const newArr = allRestau.filter((item) => item.city.match(searchInputLoc));
+            const newArr2 = newArr.filter((item) => item.name.match(searchInputRestau));
+            setSelectedRestau(() => newArr2);
+        }
     }, [searchInputLoc, searchInputRestau])
+
+    if(loading)
+        return <Spinner />;
 
     return (
     <div className="row">
@@ -36,7 +56,7 @@ const RestaurantCards = () => {
                                 <h6 className="blockquote-footer">Adress: {item.address}</h6>
                                 <p className="card-text">{item.description}</p>
                                 <div className="text-center linkToRestau">
-                                    <Link to={`/${item.id}`} className="btn-restauTeaser">
+                                    <Link to={`/restaurant/${item.id}`} className="btn-restauTeaser">
                                         <FontAwesomeIcon className="infoIcon" icon={["fas", "info-circle"]}/>
                                         Look in detail
                                     </Link>

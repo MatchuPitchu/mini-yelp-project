@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
@@ -68,7 +67,7 @@ const Footer = () => {
 								<span className="input-group-text span-custom">Message</span>
 								<textarea className="form-control inputfield" aria-label="With textarea"></textarea>
 							</div>
-							<button className="btn bg-light span-custom" variant="outline-secondary" type="submit">
+							<button className="btn bg-light btn-footer" variant="outline-secondary" type="submit">
 							    Submit
 							</button>
 						</form>

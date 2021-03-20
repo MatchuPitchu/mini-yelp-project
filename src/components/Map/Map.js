@@ -10,6 +10,7 @@ const Map = ({values}) => {
   const icon = new Icon({
     iconUrl: markerCustom,
     iconSize: [35, 35],
+    
   });
  
   // const [values, setValues] = useState();

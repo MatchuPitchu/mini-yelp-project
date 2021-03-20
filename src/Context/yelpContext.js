@@ -10,23 +10,36 @@ const YelpState = ({ children }) => {
   const [allRestau, setAllRestau] = useState([]);
   const [allReviews, setAllReviews] = useState([]);
   const [selectedRestau, setSelectedRestau] = useState();
-  const [selectedRestauSearch, setSelectedRestauSearch] = useState([]);
   const [searchInputRestau, setSearchInputRestau] = useState();
   const [searchInputLoc, setSearchInputLoc] = useState();
+  const [myRestau, setMyRestau] = useState({});
+  const [loading, setLoading] = useState(null);
+  const [error, setError] = useState('');
   
   useEffect(() => {
+    setLoading(true);
     fetch('https://mini-yelp-api.herokuapp.com/api/v1/cities')
       .then(res => res.json())
       .then(data => setAllCities(data))
-      .catch(err => console.log(`All Cities: ${err}`));
+      .catch(err => {
+        console.log(`All Cities: ${err}`)
+        setError(() => err);
+      });
+    setLoading(false)
   }, []);
 
+
   useEffect(() => {
+    setLoading(true);
     fetch('https://mini-yelp-api.herokuapp.com/api/v1/tags')
       .then(res => res.json())
       .then(data => setAllTags(data))
-      .catch(err => console.log(`All Tags: ${err}`));
-  }, []);
+      .catch(err => {
+        console.log(`All Tags: ${err}`);
+        setError(() => err);
+      });
+      setLoading(false);
+      }, []);
   
 //   ERROR: Don't understand m2m  
 //   useEffect(() => {
@@ -37,25 +50,54 @@ const YelpState = ({ children }) => {
 //         }, []);
       
     useEffect(() => {
-        fetch('https://mini-yelp-api.herokuapp.com/api/v1/restaurants')
-            .then(res => res.json())
-            .then(data => setAllRestau(data))
-            .catch(err => console.log(`All Restaurants: ${err}`));
+      setLoading(true);
+      fetch('https://mini-yelp-api.herokuapp.com/api/v1/restaurants')
+        .then(res => res.json())
+        .then(data => {
+          setAllRestau(() => data);
+          setSelectedRestau(() => data);
+        })
+        .catch(err => {
+          console.log(`All Restaurants: ${err}`);
+          setError(() => err);
+        });
+      setLoading(false);
     }, []);
-
-
+    
     useEffect(() => {
-        fetch('https://mini-yelp-api.herokuapp.com/api/v1/reviews')
-            .then(res => res.json())
-            .then(data => setAllReviews(data))
-            .catch(err => console.log(`All Reviews: ${err}`));
+      setLoading(true);
+      fetch('https://mini-yelp-api.herokuapp.com/api/v1/reviews')
+        .then(res => res.json())
+        .then(data => setAllReviews(data))
+        .catch(err => {
+          console.log(`All Reviews: ${err}`);
+          setError(() => err);
+        });
+      setLoading(false);
     }, []);
 
    
       
   return (
     <YelpContext.Provider
-        value={{ allCities, allTags, allRestau, allReviews, selectedRestau, setSelectedRestau, selectedRestauSearch, setSelectedRestauSearch, searchInputRestau, setSearchInputRestau, searchInputLoc, setSearchInputLoc }}
+        value={{  
+          allCities, 
+          allTags, 
+          allRestau,
+          allReviews,
+          selectedRestau, 
+          setSelectedRestau, 
+          searchInputRestau, 
+          setSearchInputRestau, 
+          searchInputLoc, 
+          setSearchInputLoc,
+          myRestau,
+          setMyRestau,
+          loading,
+          setLoading,
+          error,
+          setError 
+        }}
     >
       {children}
     </YelpContext.Provider>
