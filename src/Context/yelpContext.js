@@ -9,7 +9,7 @@ const YelpState = ({ children }) => {
   const [allTags, setAllTags] = useState([]);
   const [allRestau, setAllRestau] = useState([]);
   const [allReviews, setAllReviews] = useState([]);
-  const [selectedRestau, setSelectedRestau] = useState();
+  const [selectedRestau, setSelectedRestau] = useState([]);
   const [searchInputRestau, setSearchInputRestau] = useState();
   const [searchInputLoc, setSearchInputLoc] = useState();
   const [myRestau, setMyRestau] = useState({});
@@ -77,8 +77,6 @@ const YelpState = ({ children }) => {
       setLoading(false);
     }, []);
 
-   
-      
   return (
     <YelpContext.Provider
         value={{  

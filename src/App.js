@@ -31,11 +31,7 @@ const App = () => {
       <Switch>
           <Route exact path="/">
             <Map />
-            <body className="container">
-              <div className="row">
-                <RestaurantCards />
-              </div>
-            </body>
+            <RestaurantCards />
           </Route>
           <Route path="/restaurant/:id">
             <RestaurantPage />

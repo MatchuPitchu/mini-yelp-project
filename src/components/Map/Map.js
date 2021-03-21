@@ -34,10 +34,10 @@ const Map = () => {
   const pos = [52.520008, 13.404954];
 
   if(loading)
-  return <Spinner />;
+    return <Spinner />;
 
   if(error)
-  return <div>Sorry for the inconvenience, but there was an error retrieving the data: {error}</div>;
+    return <div>Sorry for the inconvenience, but there was an error retrieving the data: {error}</div>;
 
   return (
     <div className="map-container">
