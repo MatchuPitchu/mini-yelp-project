@@ -224,6 +224,61 @@ body {
   color: #242424;
 }
 
+/* Pagination */
+.paginationBtns {
+  width: 80%;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+.paginationBtns a {
+  text-decoration: none;
+  background-color: #ccc;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 8px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.paginationBtns a:hover {
+  background-color: #5e2828;
+  color: #fff;
+}
+
+.previousBtns {
+  color: #fff;
+}
+
+.nextBtn a {
+  background-color: transparent;
+}
+
+.paginationDisabled a {
+  background-color: #fff;
+  color: #ccc;
+  border: 0;
+}
+
+.paginationDisabled a:hover {
+  background-color: #fff;
+  color: #ccc;
+  border: 0;
+  cursor: default;
+}
+
+.paginationActive {
+  color: #fff;
+}
+
+.paginationActive a {
+  color: #fff;
+  background-color: #5e2828;
+}
+
 /* Footer */
 .footer {
   background-color: #5e2828;
