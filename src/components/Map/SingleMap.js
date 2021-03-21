@@ -1,42 +1,50 @@
-import React from "react";
+import React, { useContext } from "react";
+import { YelpContext } from '../../Context/yelpContext';
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Icon } from "leaflet";
-import markerCustom from "../../Assets/Img/MarkerIcon.png";
+import Leaflet from "leaflet";
+import ReactDOMServer from 'react-dom/server';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "leaflet/dist/images/marker-shadow.png";
-import "./Leaflet.css";
 import "leaflet/dist/leaflet.css";
-import Card from "../Card/Card";
 
-const SingleMap = ({values}) => {
-  const icon = new Icon({
-    iconUrl: markerCustom,
-    iconSize: [35, 35],
+const SingleMap = () => {
+  // Insert icon of FontAwesome component
+  const iconHTML = ReactDOMServer.renderToString(<FontAwesomeIcon className="iconMap" icon={["fa", "utensils"]}/>)
+  const icon = new Leaflet.DivIcon({
+    html: iconHTML,
   });
 
+  const { 
+    myRestau
+  } = useContext(YelpContext);
 
+  console.log(myRestau.lat, myRestau.long);
 
-  // values && console.log(values);
+  const position = [52.520008, 13.404954];
 
   return (
-    <div className="sideBarContainer">
-    <Card>
-        <MapContainer className="singleMap"
-      center={[52.520008, 13.404954]}
-      zoom={10.5}
-      scrollWheelZoom={false}
-    >
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {values && <Marker position={[values[0].lat, values[0].long]} icon={icon}>
-        <Popup>
-          {values[0].description} <br /> {values[0].address}
-        </Popup>
-      </Marker>}
-    </MapContainer>
-    </Card>
-    </div> 
+    <div className="map-container">
+      <MapContainer
+        center={position}
+        zoom={10.5}
+        scrollWheelZoom={false}
+        style={{width: '100%', height: '300px'}}
+      >
+        <TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+          <Marker 
+            position={position}
+            icon={icon}
+          >
+            <Popup>
+              {/* <h6>{myRestau.description}</h6>
+              <p>{myRestau.address}</p> */}
+            </Popup>
+          </Marker>
+      </MapContainer>
+    </div>
   );
 };
 
