@@ -156,6 +156,32 @@ body {
   border-bottom: 5px solid #5e2828;
 }
 
+.iconMap {
+  background-color: #fff;
+  font-size: 2.4em;
+  color: #5e2828;
+  border: 1px solid #5e2828;
+  border-radius: 90%;
+  padding: 3.5px;
+  animation-name: rotate;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.leaflet-div-icon {
+  background: transparent !important;
+  border: 0 !important;
+}
+
 /* Restaurand Cards Landing Page */
 .cardImg {
   height: 150px;

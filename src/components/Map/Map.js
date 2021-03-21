@@ -1,17 +1,18 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { YelpContext } from '../../Context/yelpContext';
 import Spinner from '../Spinner';
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { Icon } from "leaflet";
-import markerCustom from "../../Assets/Img/MarkerIcon.png";
+import Leaflet from "leaflet";
+import ReactDOMServer from 'react-dom/server';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import "leaflet/dist/images/marker-shadow.png";
-import "./Leaflet.css";
 import "leaflet/dist/leaflet.css";
 
 const Map = () => {
-  const icon = new Icon({
-    iconUrl: markerCustom,
-    iconSize: [25, 25],
+  // Insert icon of FontAwesome component
+  const iconHTML = ReactDOMServer.renderToString(<FontAwesomeIcon className="iconMap" icon={["fa", "utensils"]}/>)
+  const icon = new Leaflet.DivIcon({
+    html: iconHTML,
   });
 
   const { 

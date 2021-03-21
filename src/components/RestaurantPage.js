@@ -38,8 +38,7 @@ const RestaurantPage = () => {
     return <div>Sorry for the inconvenience, but there was an error retrieving the data: {error}</div>;
 
   return (
-    <>
-      <div className="card">
+    <div className="card">
         <div className="card-header container-RestauImg row">
           <div className="col-sm-12 col-md-6">
             <img src={`https://mini-yelp-api.herokuapp.com/static/img/${myRestau.image}`} class="card-img-top" alt={`Restaurant ${myRestau.name}`} />
@@ -70,25 +69,26 @@ const RestaurantPage = () => {
             <SingleMap />
           </div>
         </div>
-        <div class="card-body"></div>
-        <div class="card-footer text-muted">
-          <div className="row">
-            {myRestau.reviews && myRestau.reviews.map(review => {
-              return (
-                <div className="col-md-6" key={review.id}>
-                  <h6 className="hReview">{review.title}</h6>
-                  <h6 className="blockquote-footer">{review.date.substring(0, 10)}</h6>
-                  <h6 className="blockquote-footer">Author: {review.first_name} {review.last_name}</h6>
-                  <div className="card-text">
-                    Rating: {review.rating} <FontAwesomeIcon color={"#5E2828"} icon={["fa", "star"]}/>
-                  </div>
-                  <hr/>
-                </div>) 
-              })}
+        <div className="container">
+          <div class="card-body"></div>
+          <div class="card-footer text-muted">
+            <div className="row">
+              {myRestau.reviews && myRestau.reviews.map(review => {
+                return (
+                  <div className="col-md-6" key={review.id}>
+                    <h6 className="hReview">{review.title}</h6>
+                    <h6 className="blockquote-footer">{review.date.substring(0, 10)}</h6>
+                    <h6 className="blockquote-footer">Author: {review.first_name} {review.last_name}</h6>
+                    <div className="card-text">
+                      Rating: {review.rating} <FontAwesomeIcon color={"#5E2828"} icon={["fa", "star"]}/>
+                    </div>
+                    <hr/>
+                  </div>) 
+                })}
+            </div>
           </div>
         </div>
-      </div>
-    </>    
+      </div> 
   );
 };
 
