@@ -156,6 +156,10 @@ body {
   border-bottom: 5px solid #5e2828;
 }
 
+.singleMap-container {
+  background-color: #fff;
+}
+
 .iconMap {
   background-color: #fff;
   font-size: 2.4em;
