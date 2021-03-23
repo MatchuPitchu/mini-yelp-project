@@ -9,11 +9,9 @@ const RestaurantCards = () => {
     const { 
         allRestau, 
         searchInputRestau,
-        searchInputLoc, 
-        selectedRestau, 
+        searchInputLoc,
+        selectedRestau,
         setSelectedRestau,
-        centerMap,
-        setCenterMap,
         loading 
     } = useContext(YelpContext);
 

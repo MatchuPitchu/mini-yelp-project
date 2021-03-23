@@ -1,6 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
-
 
 export const YelpContext = createContext();
 
@@ -13,7 +11,6 @@ const YelpState = ({ children }) => {
   const [searchInputRestau, setSearchInputRestau] = useState();
   const [searchInputLoc, setSearchInputLoc] = useState();
   const [myRestau, setMyRestau] = useState({});
-  const [position, setPosition] = useState([])
   const [loading, setLoading] = useState(null);
   const [error, setError] = useState('');
   
@@ -92,12 +89,10 @@ const YelpState = ({ children }) => {
           setSearchInputLoc,
           myRestau,
           setMyRestau,
-          position, 
-          setPosition,
           loading,
           setLoading,
           error,
-          setError 
+          setError
         }}
     >
       {children}

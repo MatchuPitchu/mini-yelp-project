@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { YelpContext } from "./Context/yelpContext";
 import { Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,7 +6,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Searchbar from './components/Searchbar';
 import RestaurantCards from "./components/RestaurantCards";
-import Map from "./components/Map/Map";
+import Map from "./components/Map";
 import RestaurantPage from "./components/RestaurantPage";
 import Footer from "./components/Footer";
 import Spinner from "./components/Spinner";
@@ -33,7 +33,7 @@ const App = () => {
             <Map />
             <RestaurantCards />
           </Route>
-          <Route path="/restaurant/:id">
+          <Route exact path="/restaurant/:id">
             <RestaurantPage />
           </Route>
       </Switch>
